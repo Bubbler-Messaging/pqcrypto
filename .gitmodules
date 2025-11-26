@@ -1,3 +1,4 @@
 [submodule "pqclean"]
 	path = pqclean
-	url = https://github.com/pqclean/PQClean.git
+	url = https://github.com/Bubbler-Messaging/PQClean.git
+	branch = bubbler_fork_1
