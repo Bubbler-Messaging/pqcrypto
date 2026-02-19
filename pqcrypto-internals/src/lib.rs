@@ -15,9 +15,9 @@ use core::slice;
 ///   PQCRYPTO_RUST_randombytes(buf.as_mut_ptr(), buf.len());
 /// }
 /// ```
-#[no_mangle]
-pub unsafe extern "C" fn PQCRYPTO_RUST_randombytes(buf: *mut u8, len: libc::size_t) -> libc::c_int {
+#[unsafe(no_mangle)]
+pub unsafe extern "C" fn PQCRYPTO_RUST_randombytes(buf: *mut u8, len: libc::size_t) -> libc::c_int { unsafe {
     let buf = slice::from_raw_parts_mut(buf, len);
     getrandom::fill(buf).expect("RNG Failed");
     0
-}
+}}

@@ -1,21 +1,48 @@
-# Bindings to quantum-safe cryptographic libraries
+# pqcrypto
 
-[![dependency status](https://deps.rs/repo/github/rustpq/pqcrypto/status.svg)](https://deps.rs/repo/github/rustpq/pqcrypto)
+Maintained fork of [pqcrypto](https://github.com/rustpq/pqcrypto) — Rust bindings to post-quantum cryptographic algorithms from [PQClean](https://github.com/PQClean/PQClean).
 
-This repository contains bindings to C implementations of cryptographic algorithms part of the [NIST competition][nist].
-These bindings are generated based on the [PQClean][pqclean] project, which aims to collect 'clean' implementations of cryptographic algorithms.
+This fork uses [Bubbler's PQClean fork](https://github.com/Bubbler-Messaging/PQClean) as the native backend, with a frozen version of the C implementations.
 
-## How to generate the bindings
+## What changed from upstream
 
-The `pqcrypto-templates` folder contains the master copies of the Rust files.
-The binding libraries are generated from the PQClean meta files and PQClean specified API.
-The file `implementations.yaml` controls the version numbers and included variants of each scheme.
-The generation of the different pq-crates is done by the `generate-implementation.py` script.
+- **Actively maintained** for [Bubbler Messaging](https://github.com/Bubbler-Messaging)
+- Rust edition 2024
+- PQClean submodule points to Bubbler's fork (version frozen)
 
-## Documentation
+## Included algorithms
 
-See the [documentation of the master project on docs.rs][docsrs].
+| Crate | Type | Algorithms |
+| :---- | :--- | :--------- |
+| `pqcrypto-mlkem` | KEM | ML-KEM-512, ML-KEM-768, ML-KEM-1024 |
+| `pqcrypto-mldsa` | Signature | ML-DSA-44, ML-DSA-65, ML-DSA-87 |
+| `pqcrypto-falcon` | Signature | Falcon-512, Falcon-1024, Falcon-padded variants |
+| `pqcrypto-sphincsplus` | Signature | SPHINCS+-SHA2/SHAKE (128/192/256, f/s) |
+| `pqcrypto-classicmceliece` | KEM | Classic McEliece variants |
+| `pqcrypto-hqc` | KEM | HQC-128, HQC-192, HQC-256 |
 
-[nist]: https://nist.gov/pqcrypto
-[pqclean]: https://github.com/pqclean/pqclean/
-[docsrs]: https://docs.rs/pqcrypto/
+## Building
+
+A C compiler (`cc`, `clang`, ...) is required to build the PQClean C implementations.
+
+```bash
+git clone https://github.com/Bubbler-Messaging/pqcrypto.git
+cd pqcrypto
+git submodule update --init --recursive
+cargo build
+```
+
+## Testing
+
+```bash
+cargo test
+```
+
+## License
+
+Licensed under either of
+
+- [Apache License, Version 2.0](pqcrypto/LICENSE-APACHE)
+- [MIT License](pqcrypto/LICENSE-MIT)
+
+at your option.

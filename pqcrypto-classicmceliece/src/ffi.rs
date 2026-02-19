@@ -162,7 +162,7 @@ pub const PQCLEAN_MCELIECE8192128F_AVX2_CRYPTO_CIPHERTEXTBYTES: usize = 208;
 pub const PQCLEAN_MCELIECE8192128F_AVX2_CRYPTO_BYTES: usize = 32;
 
 #[link(name = "mceliece348864_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_MCELIECE348864_CLEAN_crypto_kem_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     pub fn PQCLEAN_MCELIECE348864_CLEAN_crypto_kem_enc(
         ct: *mut u8,
@@ -178,7 +178,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "mceliece348864_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_MCELIECE348864_AVX2_crypto_kem_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     #[cfg(enable_x86_avx2)]
@@ -196,7 +196,7 @@ extern "C" {
 }
 
 #[link(name = "mceliece348864f_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_MCELIECE348864F_CLEAN_crypto_kem_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     pub fn PQCLEAN_MCELIECE348864F_CLEAN_crypto_kem_enc(
         ct: *mut u8,
@@ -212,7 +212,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "mceliece348864f_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_MCELIECE348864F_AVX2_crypto_kem_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     #[cfg(enable_x86_avx2)]
@@ -230,7 +230,7 @@ extern "C" {
 }
 
 #[link(name = "mceliece460896_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_MCELIECE460896_CLEAN_crypto_kem_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     pub fn PQCLEAN_MCELIECE460896_CLEAN_crypto_kem_enc(
         ct: *mut u8,
@@ -246,7 +246,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "mceliece460896_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_MCELIECE460896_AVX2_crypto_kem_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     #[cfg(enable_x86_avx2)]
@@ -264,7 +264,7 @@ extern "C" {
 }
 
 #[link(name = "mceliece460896f_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_MCELIECE460896F_CLEAN_crypto_kem_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     pub fn PQCLEAN_MCELIECE460896F_CLEAN_crypto_kem_enc(
         ct: *mut u8,
@@ -280,7 +280,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "mceliece460896f_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_MCELIECE460896F_AVX2_crypto_kem_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     #[cfg(enable_x86_avx2)]
@@ -298,7 +298,7 @@ extern "C" {
 }
 
 #[link(name = "mceliece6688128_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_MCELIECE6688128_CLEAN_crypto_kem_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     pub fn PQCLEAN_MCELIECE6688128_CLEAN_crypto_kem_enc(
         ct: *mut u8,
@@ -314,7 +314,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "mceliece6688128_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_MCELIECE6688128_AVX2_crypto_kem_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     #[cfg(enable_x86_avx2)]
@@ -332,7 +332,7 @@ extern "C" {
 }
 
 #[link(name = "mceliece6688128f_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_MCELIECE6688128F_CLEAN_crypto_kem_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     pub fn PQCLEAN_MCELIECE6688128F_CLEAN_crypto_kem_enc(
         ct: *mut u8,
@@ -348,7 +348,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "mceliece6688128f_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_MCELIECE6688128F_AVX2_crypto_kem_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     #[cfg(enable_x86_avx2)]
@@ -366,7 +366,7 @@ extern "C" {
 }
 
 #[link(name = "mceliece6960119_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_MCELIECE6960119_CLEAN_crypto_kem_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     pub fn PQCLEAN_MCELIECE6960119_CLEAN_crypto_kem_enc(
         ct: *mut u8,
@@ -382,7 +382,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "mceliece6960119_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_MCELIECE6960119_AVX2_crypto_kem_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     #[cfg(enable_x86_avx2)]
@@ -400,7 +400,7 @@ extern "C" {
 }
 
 #[link(name = "mceliece6960119f_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_MCELIECE6960119F_CLEAN_crypto_kem_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     pub fn PQCLEAN_MCELIECE6960119F_CLEAN_crypto_kem_enc(
         ct: *mut u8,
@@ -416,7 +416,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "mceliece6960119f_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_MCELIECE6960119F_AVX2_crypto_kem_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     #[cfg(enable_x86_avx2)]
@@ -434,7 +434,7 @@ extern "C" {
 }
 
 #[link(name = "mceliece8192128_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_MCELIECE8192128_CLEAN_crypto_kem_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     pub fn PQCLEAN_MCELIECE8192128_CLEAN_crypto_kem_enc(
         ct: *mut u8,
@@ -450,7 +450,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "mceliece8192128_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_MCELIECE8192128_AVX2_crypto_kem_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     #[cfg(enable_x86_avx2)]
@@ -468,7 +468,7 @@ extern "C" {
 }
 
 #[link(name = "mceliece8192128f_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_MCELIECE8192128F_CLEAN_crypto_kem_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     pub fn PQCLEAN_MCELIECE8192128F_CLEAN_crypto_kem_enc(
         ct: *mut u8,
@@ -484,7 +484,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "mceliece8192128f_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_MCELIECE8192128F_AVX2_crypto_kem_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     #[cfg(enable_x86_avx2)]

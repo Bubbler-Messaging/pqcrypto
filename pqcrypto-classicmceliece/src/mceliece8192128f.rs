@@ -31,7 +31,7 @@ use pqcrypto_traits::{Error, Result};
 use std::fmt;
 
 macro_rules! simple_struct {
-    ($type: ident, $size: expr) => {
+    ($type: ident, $size: expr_2021) => {
         #[derive(Clone, Copy)]
         #[cfg_attr(feature = "serialization", derive(Serialize, Deserialize))]
         pub struct $type(

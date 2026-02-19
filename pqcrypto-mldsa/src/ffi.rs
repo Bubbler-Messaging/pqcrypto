@@ -69,7 +69,7 @@ pub const PQCLEAN_MLDSA87_AARCH64_CRYPTO_PUBLICKEYBYTES: usize = 2592;
 pub const PQCLEAN_MLDSA87_AARCH64_CRYPTO_BYTES: usize = 4627;
 
 #[link(name = "ml-dsa-44_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_MLDSA44_CLEAN_crypto_sign_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     pub fn PQCLEAN_MLDSA44_CLEAN_crypto_sign(
         sm: *mut u8,
@@ -140,7 +140,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "ml-dsa-44_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_MLDSA44_AVX2_crypto_sign_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     #[cfg(enable_x86_avx2)]
@@ -299,7 +299,7 @@ extern "C" {
 }
 
 #[link(name = "ml-dsa-65_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_MLDSA65_CLEAN_crypto_sign_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     pub fn PQCLEAN_MLDSA65_CLEAN_crypto_sign(
         sm: *mut u8,
@@ -370,7 +370,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "ml-dsa-65_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_MLDSA65_AVX2_crypto_sign_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     #[cfg(enable_x86_avx2)]
@@ -529,7 +529,7 @@ extern "C" {
 }
 
 #[link(name = "ml-dsa-87_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_MLDSA87_CLEAN_crypto_sign_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     pub fn PQCLEAN_MLDSA87_CLEAN_crypto_sign(
         sm: *mut u8,
@@ -600,7 +600,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "ml-dsa-87_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_MLDSA87_AVX2_crypto_sign_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     #[cfg(enable_x86_avx2)]

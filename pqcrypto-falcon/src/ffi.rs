@@ -88,7 +88,7 @@ pub const PQCLEAN_FALCONPADDED1024_AARCH64_CRYPTO_PUBLICKEYBYTES: usize = 1793;
 pub const PQCLEAN_FALCONPADDED1024_AARCH64_CRYPTO_BYTES: usize = 1280;
 
 #[link(name = "falcon-512_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_FALCON512_CLEAN_crypto_sign_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     pub fn PQCLEAN_FALCON512_CLEAN_crypto_sign(
         sm: *mut u8,
@@ -123,7 +123,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "falcon-512_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_FALCON512_AVX2_crypto_sign_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     #[cfg(enable_x86_avx2)]
@@ -202,7 +202,7 @@ extern "C" {
 }
 
 #[link(name = "falcon-padded-512_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_FALCONPADDED512_CLEAN_crypto_sign_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     pub fn PQCLEAN_FALCONPADDED512_CLEAN_crypto_sign(
         sm: *mut u8,
@@ -237,7 +237,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "falcon-padded-512_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_FALCONPADDED512_AVX2_crypto_sign_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     #[cfg(enable_x86_avx2)]
@@ -316,7 +316,7 @@ extern "C" {
 }
 
 #[link(name = "falcon-1024_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_FALCON1024_CLEAN_crypto_sign_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     pub fn PQCLEAN_FALCON1024_CLEAN_crypto_sign(
         sm: *mut u8,
@@ -351,7 +351,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "falcon-1024_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_FALCON1024_AVX2_crypto_sign_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     #[cfg(enable_x86_avx2)]
@@ -430,7 +430,7 @@ extern "C" {
 }
 
 #[link(name = "falcon-padded-1024_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_FALCONPADDED1024_CLEAN_crypto_sign_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     pub fn PQCLEAN_FALCONPADDED1024_CLEAN_crypto_sign(
         sm: *mut u8,
@@ -465,7 +465,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "falcon-padded-1024_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_FALCONPADDED1024_AVX2_crypto_sign_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     #[cfg(enable_x86_avx2)]

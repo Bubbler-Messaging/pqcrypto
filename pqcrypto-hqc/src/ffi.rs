@@ -30,21 +30,21 @@ pub const PQCLEAN_HQC256_CLEAN_CRYPTO_CIPHERTEXTBYTES: usize = 14421;
 pub const PQCLEAN_HQC256_CLEAN_CRYPTO_BYTES: usize = 64;
 
 #[link(name = "hqc-128_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_HQC128_CLEAN_crypto_kem_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     pub fn PQCLEAN_HQC128_CLEAN_crypto_kem_enc(ct: *mut u8, ss: *mut u8, pk: *const u8) -> c_int;
     pub fn PQCLEAN_HQC128_CLEAN_crypto_kem_dec(ss: *mut u8, ct: *const u8, sk: *const u8) -> c_int;
 }
 
 #[link(name = "hqc-192_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_HQC192_CLEAN_crypto_kem_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     pub fn PQCLEAN_HQC192_CLEAN_crypto_kem_enc(ct: *mut u8, ss: *mut u8, pk: *const u8) -> c_int;
     pub fn PQCLEAN_HQC192_CLEAN_crypto_kem_dec(ss: *mut u8, ct: *const u8, sk: *const u8) -> c_int;
 }
 
 #[link(name = "hqc-256_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_HQC256_CLEAN_crypto_kem_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     pub fn PQCLEAN_HQC256_CLEAN_crypto_kem_enc(ct: *mut u8, ss: *mut u8, pk: *const u8) -> c_int;
     pub fn PQCLEAN_HQC256_CLEAN_crypto_kem_dec(ss: *mut u8, ct: *const u8, sk: *const u8) -> c_int;

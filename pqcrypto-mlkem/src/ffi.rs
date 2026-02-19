@@ -84,7 +84,7 @@ pub const PQCLEAN_MLKEM1024_AARCH64_CRYPTO_CIPHERTEXTBYTES: usize = 1568;
 pub const PQCLEAN_MLKEM1024_AARCH64_CRYPTO_BYTES: usize = 32;
 
 #[link(name = "ml-kem-512_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_MLKEM512_CLEAN_crypto_kem_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     pub fn PQCLEAN_MLKEM512_CLEAN_crypto_kem_enc(ct: *mut u8, ss: *mut u8, pk: *const u8) -> c_int;
     pub fn PQCLEAN_MLKEM512_CLEAN_crypto_kem_dec(
@@ -96,7 +96,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "ml-kem-512_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_MLKEM512_AVX2_crypto_kem_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     #[cfg(enable_x86_avx2)]
@@ -126,7 +126,7 @@ extern "C" {
 }
 
 #[link(name = "ml-kem-768_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_MLKEM768_CLEAN_crypto_kem_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     pub fn PQCLEAN_MLKEM768_CLEAN_crypto_kem_enc(ct: *mut u8, ss: *mut u8, pk: *const u8) -> c_int;
     pub fn PQCLEAN_MLKEM768_CLEAN_crypto_kem_dec(
@@ -138,7 +138,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "ml-kem-768_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_MLKEM768_AVX2_crypto_kem_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     #[cfg(enable_x86_avx2)]
@@ -168,7 +168,7 @@ extern "C" {
 }
 
 #[link(name = "ml-kem-1024_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_MLKEM1024_CLEAN_crypto_kem_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     pub fn PQCLEAN_MLKEM1024_CLEAN_crypto_kem_enc(ct: *mut u8, ss: *mut u8, pk: *const u8)
         -> c_int;
@@ -181,7 +181,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "ml-kem-1024_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_MLKEM1024_AVX2_crypto_kem_keypair(pk: *mut u8, sk: *mut u8) -> c_int;
     #[cfg(enable_x86_avx2)]

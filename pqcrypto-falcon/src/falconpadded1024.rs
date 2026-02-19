@@ -33,7 +33,7 @@ use pqcrypto_traits::{Error, Result};
 use std::fmt;
 
 macro_rules! simple_struct {
-    ($type: ident, $size: expr) => {
+    ($type: ident, $size: expr_2021) => {
         #[derive(Clone, Copy)]
         #[cfg_attr(feature = "serialization", derive(Serialize, Deserialize))]
         pub struct $type(
@@ -403,7 +403,7 @@ mod test {
         let mut rng = rand::rng();
         let len: u16 = rng.random();
 
-        let message = (0..len).map(|_| rng.gen::<u8>()).collect::<Vec<_>>();
+        let message = (0..len).map(|_| rng.r#gen::<u8>()).collect::<Vec<_>>();
         let (pk, sk) = keypair();
         let sm = sign(&message, &sk);
         let verifiedmsg = open(&sm, &pk).unwrap();
@@ -414,7 +414,7 @@ mod test {
     pub fn test_sign_detached() {
         let mut rng = rand::rng();
         let len: u16 = rng.random();
-        let message = (0..len).map(|_| rng.gen::<u8>()).collect::<Vec<_>>();
+        let message = (0..len).map(|_| rng.r#gen::<u8>()).collect::<Vec<_>>();
 
         let (pk, sk) = keypair();
         let sig = detached_sign(&message, &sk);

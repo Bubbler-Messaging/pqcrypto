@@ -156,7 +156,7 @@ pub const PQCLEAN_SPHINCSSHA2256SSIMPLE_AVX2_CRYPTO_PUBLICKEYBYTES: usize = 64;
 pub const PQCLEAN_SPHINCSSHA2256SSIMPLE_AVX2_CRYPTO_BYTES: usize = 29792;
 
 #[link(name = "sphincs-shake-128f-simple_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_SPHINCSSHAKE128FSIMPLE_CLEAN_crypto_sign_keypair(
         pk: *mut u8,
         sk: *mut u8,
@@ -194,7 +194,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "sphincs-shake-128f-simple_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_SPHINCSSHAKE128FSIMPLE_AVX2_crypto_sign_keypair(
         pk: *mut u8,
@@ -236,7 +236,7 @@ extern "C" {
 }
 
 #[link(name = "sphincs-shake-128s-simple_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_SPHINCSSHAKE128SSIMPLE_CLEAN_crypto_sign_keypair(
         pk: *mut u8,
         sk: *mut u8,
@@ -274,7 +274,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "sphincs-shake-128s-simple_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_SPHINCSSHAKE128SSIMPLE_AVX2_crypto_sign_keypair(
         pk: *mut u8,
@@ -316,7 +316,7 @@ extern "C" {
 }
 
 #[link(name = "sphincs-shake-192f-simple_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_SPHINCSSHAKE192FSIMPLE_CLEAN_crypto_sign_keypair(
         pk: *mut u8,
         sk: *mut u8,
@@ -354,7 +354,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "sphincs-shake-192f-simple_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_SPHINCSSHAKE192FSIMPLE_AVX2_crypto_sign_keypair(
         pk: *mut u8,
@@ -396,7 +396,7 @@ extern "C" {
 }
 
 #[link(name = "sphincs-shake-192s-simple_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_SPHINCSSHAKE192SSIMPLE_CLEAN_crypto_sign_keypair(
         pk: *mut u8,
         sk: *mut u8,
@@ -434,7 +434,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "sphincs-shake-192s-simple_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_SPHINCSSHAKE192SSIMPLE_AVX2_crypto_sign_keypair(
         pk: *mut u8,
@@ -476,7 +476,7 @@ extern "C" {
 }
 
 #[link(name = "sphincs-shake-256f-simple_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_SPHINCSSHAKE256FSIMPLE_CLEAN_crypto_sign_keypair(
         pk: *mut u8,
         sk: *mut u8,
@@ -514,7 +514,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "sphincs-shake-256f-simple_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_SPHINCSSHAKE256FSIMPLE_AVX2_crypto_sign_keypair(
         pk: *mut u8,
@@ -556,7 +556,7 @@ extern "C" {
 }
 
 #[link(name = "sphincs-shake-256s-simple_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_SPHINCSSHAKE256SSIMPLE_CLEAN_crypto_sign_keypair(
         pk: *mut u8,
         sk: *mut u8,
@@ -594,7 +594,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "sphincs-shake-256s-simple_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_SPHINCSSHAKE256SSIMPLE_AVX2_crypto_sign_keypair(
         pk: *mut u8,
@@ -636,7 +636,7 @@ extern "C" {
 }
 
 #[link(name = "sphincs-sha2-128f-simple_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_SPHINCSSHA2128FSIMPLE_CLEAN_crypto_sign_keypair(
         pk: *mut u8,
         sk: *mut u8,
@@ -674,7 +674,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "sphincs-sha2-128f-simple_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_SPHINCSSHA2128FSIMPLE_AVX2_crypto_sign_keypair(
         pk: *mut u8,
@@ -716,7 +716,7 @@ extern "C" {
 }
 
 #[link(name = "sphincs-sha2-128s-simple_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_SPHINCSSHA2128SSIMPLE_CLEAN_crypto_sign_keypair(
         pk: *mut u8,
         sk: *mut u8,
@@ -754,7 +754,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "sphincs-sha2-128s-simple_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_SPHINCSSHA2128SSIMPLE_AVX2_crypto_sign_keypair(
         pk: *mut u8,
@@ -796,7 +796,7 @@ extern "C" {
 }
 
 #[link(name = "sphincs-sha2-192f-simple_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_SPHINCSSHA2192FSIMPLE_CLEAN_crypto_sign_keypair(
         pk: *mut u8,
         sk: *mut u8,
@@ -834,7 +834,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "sphincs-sha2-192f-simple_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_SPHINCSSHA2192FSIMPLE_AVX2_crypto_sign_keypair(
         pk: *mut u8,
@@ -876,7 +876,7 @@ extern "C" {
 }
 
 #[link(name = "sphincs-sha2-192s-simple_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_SPHINCSSHA2192SSIMPLE_CLEAN_crypto_sign_keypair(
         pk: *mut u8,
         sk: *mut u8,
@@ -914,7 +914,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "sphincs-sha2-192s-simple_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_SPHINCSSHA2192SSIMPLE_AVX2_crypto_sign_keypair(
         pk: *mut u8,
@@ -956,7 +956,7 @@ extern "C" {
 }
 
 #[link(name = "sphincs-sha2-256f-simple_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_SPHINCSSHA2256FSIMPLE_CLEAN_crypto_sign_keypair(
         pk: *mut u8,
         sk: *mut u8,
@@ -994,7 +994,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "sphincs-sha2-256f-simple_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_SPHINCSSHA2256FSIMPLE_AVX2_crypto_sign_keypair(
         pk: *mut u8,
@@ -1036,7 +1036,7 @@ extern "C" {
 }
 
 #[link(name = "sphincs-sha2-256s-simple_clean")]
-extern "C" {
+unsafe extern "C" {
     pub fn PQCLEAN_SPHINCSSHA2256SSIMPLE_CLEAN_crypto_sign_keypair(
         pk: *mut u8,
         sk: *mut u8,
@@ -1074,7 +1074,7 @@ extern "C" {
 
 #[cfg(enable_x86_avx2)]
 #[link(name = "sphincs-sha2-256s-simple_avx2")]
-extern "C" {
+unsafe extern "C" {
     #[cfg(enable_x86_avx2)]
     pub fn PQCLEAN_SPHINCSSHA2256SSIMPLE_AVX2_crypto_sign_keypair(
         pk: *mut u8,
